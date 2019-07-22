@@ -117,6 +117,7 @@ class PublicUserApiTests(TestCase):
 
 class PrivateUserApiTests(TestCase):
     """Test API requests that require authentication"""
+
     def setUp(self):
         self.user = create_user(
             email="test@test.com",
@@ -142,7 +143,8 @@ class PrivateUserApiTests(TestCase):
         """ Test that POST is not allowed on me url"""
         response = self.client.post(ME_URL, {})
 
-        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+        self.assertEqual(response.status_code,
+                         status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def test_update_me_user_profile(self):
         """ Testing that the user can update profile if authenticated"""
