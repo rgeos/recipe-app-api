@@ -108,7 +108,7 @@ class PrivateIngredientsApiTests(TestCase):
         )
         recipe.ingredients.add(ingredient1)
 
-        responose=self.client.get(INGREDIENTS_URL, {'assigned_only': 1})
+        responose = self.client.get(INGREDIENTS_URL, {'assigned_only': 1})
 
         serializer1 = IngredientSerializer(ingredient1)
         serializer2 = IngredientSerializer(ingredient2)

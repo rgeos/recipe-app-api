@@ -331,4 +331,3 @@ class RecipeImageUploadTests(TestCase):
         self.assertIn(serializer1.data, response.data)
         self.assertIn(serializer2.data, response.data)
         self.assertNotIn(serializer3.data, response.data)
-
